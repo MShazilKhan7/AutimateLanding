@@ -4,6 +4,7 @@
     "target": "ES2023",
     "lib": ["ES2023"],
     "module": "ESNext",
+    "composite": true,
     "skipLibCheck": true,
 
     /* Bundler mode */
@@ -14,6 +15,7 @@
     "noEmit": true,
 
     /* Linting */
+    
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
