@@ -28,7 +28,7 @@ export function ContactSection() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     // Basic validation
     if (!formData.name || !formData.email || !formData.phone || !formData.message) {
       toast({
@@ -44,8 +44,8 @@ export function ContactSection() {
     // Simulate form submission (replace with your preferred service like Formspree, Netlify Forms, etc.)
     try {
       // Example: mailto link or third-party service integration
-      const mailtoLink = `mailto:contact@autimate.com?subject=New Contact Form Submission from ${formData.name}&body=Name: ${formData.name}%0D%0AEmail: ${formData.email}%0D%0APhone: ${formData.phone}%0D%0AMessage: ${formData.message}`;
-      
+      const mailtoLink = `mailto:alihamzabham@gmail.com?subject=New AutiMate Contact Form Submission from ${formData.name}&body=Name: ${formData.name}%0D%0AEmail: ${formData.email}%0D%0APhone: ${formData.phone}%0D%0AMessage: ${formData.message}`;
+
       // For demo purposes, just show success message
       setTimeout(() => {
         toast({
@@ -55,7 +55,7 @@ export function ContactSection() {
         setFormData({ name: "", email: "", phone: "", message: "" });
         setIsSubmitting(false);
       }, 1000);
-      
+
     } catch (error) {
       toast({
         title: "Error",
@@ -73,21 +73,19 @@ export function ContactSection() {
   };
 
   return (
-    <section id="contact" className="py-20 bg-white">
+    <section id="contact" className="py-12 sm:py-16 md:py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader
           title="Get Started Today"
           description="Join us in transforming autism care. Start your child's journey towards better communication and independence."
         />
-
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
           <AnimatedSection
             direction="left"
-            className="bg-gradient-to-br from-blue-50 to-purple-50 p-8 lg:p-12 rounded-3xl"
+            className="bg-gradient-to-br max-w-2xl mx-auto from-blue-50 to-purple-50 p-4 sm:p-6 md:p-8 lg:p-12 rounded-2xl md:rounded-3xl w-full"
           >
-            <h3 className="text-2xl font-bold text-soft-charcoal mb-6">Ready to Begin?</h3>
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div className="grid sm:grid-cols-2 gap-4">
+            <h3 className="text-xl sm:text-2xl font-bold text-soft-charcoal mb-4 sm:mb-6">Ready to Begin?</h3>
+            <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
                   <Label htmlFor="name" className="block text-sm font-medium text-soft-charcoal mb-2">
                     Parent/Guardian Name
@@ -156,56 +154,10 @@ export function ContactSection() {
                 testId="button-submit-contact"
                 className="w-full py-4 disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                {isSubmitting ? "Sending..." : "Start Free Consultation"}
+                {isSubmitting ? "Sending..." : "Be the first one to know when we're live"}
               </GradientButton>
             </form>
           </AnimatedSection>
-
-          <AnimatedSection
-            direction="right"
-            delay={0.2}
-            className="space-y-8"
-          >
-            <div>
-              <img
-                src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=500"
-                alt="Family in supportive healthcare environment"
-                className="rounded-2xl shadow-lg w-full h-auto"
-                data-testid="img-family-healthcare"
-              />
-            </div>
-
-            <div className="grid sm:grid-cols-2 gap-6">
-              <InfoCard
-                icon={Mail}
-                title="Email Us"
-                content="contact@autimate.com"
-                iconColor="text-gentle-blue"
-              />
-
-              <InfoCard
-                icon={Phone}
-                title="Call Us"
-                content="+92 XXX XXXXXXX"
-                iconColor="text-soft-teal"
-              />
-
-              <InfoCard
-                icon={MapPin}
-                title="Location"
-                content="Karachi, Pakistan"
-                iconColor="text-sage-green"
-              />
-
-              <InfoCard
-                icon={Clock}
-                title="Support Hours"
-                content="24/7 AI Support"
-                iconColor="text-warm-orange"
-              />
-            </div>
-          </AnimatedSection>
-        </div>
       </div>
     </section>
   );

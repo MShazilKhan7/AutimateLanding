@@ -13,7 +13,7 @@ export const GradientButton = forwardRef<HTMLButtonElement, GradientButtonProps>
     const baseClasses = "font-semibold transition-all duration-300 transform hover:-translate-y-0.5";
     
     const variantClasses = {
-      primary: "bg-gradient-to-r from-soft-teal to-gentle-blue text-white hover:shadow-xl",
+      primary: "bg-gradient-to-r from-primary to-secondary text-white hover:shadow-xl",
       secondary: "border border-gray-300 text-soft-charcoal hover:bg-gray-50"
     };
 

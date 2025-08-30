@@ -6,6 +6,7 @@ import { FeaturesSection } from "@/components/features-section";
 import { TeamSection } from "@/components/team-section";
 import { ContactSection } from "@/components/contact-section";
 import { Footer } from "@/components/footer";
+import { About } from "@/components/About";
 
 export default function Home() {
   return (
@@ -13,6 +14,7 @@ export default function Home() {
       <Navigation />
       <main>
         <HeroSection />
+        <About />
         <ProblemSection />
         <SolutionSection />
         <FeaturesSection />

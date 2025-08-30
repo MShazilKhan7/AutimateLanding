@@ -6,19 +6,29 @@ import { AnimatedSection } from "@/components/ui/animated-section";
 export function TeamSection() {
   const teamMembers = [
     {
-      role: "Co-Founder & CEO",
-      description: "Engineering student passionate about healthcare technology and autism advocacy.",
+      name: "M.Shazil Khan",
+      role: "Co-Founder",
       color: "from-gentle-blue to-purple-500",
+      imageUrl: "/assets/shazil.jpg",
     },
     {
-      role: "CTO & AI Developer",
+      name: "M.Hamza Bham",
+      role: "CTO",
       description: "Specializing in machine learning and speech recognition technologies.",
       color: "from-sage-green to-teal-500",
+      imageUrl: "/assets/hamza.jpg",
     },
     {
-      role: "Head of Product",
+      role: "Faiq Hussain",
       description: "Focused on user experience and accessibility in healthcare applications.",
       color: "from-warm-orange to-red-500",
+      imageUrl: "/assets/faiq.jpg",
+    },
+    {
+      role: "Umair Lafir",
+      description: "Dedicated to creating intuitive and inclusive interfaces for children and families.",
+      color: "from-soft-pink to-yellow-400",
+      imageUrl: "/assets/umair.jpg",
     },
   ];
 
@@ -30,15 +40,16 @@ export function TeamSection() {
           description="Passionate students from NED University dedicated to making autism care accessible to every family."
         />
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
           {teamMembers.map((member, index) => (
             <TeamMemberCard
               key={member.role}
+              name={member.name}
               role={member.role}
-              description={member.description}
               gradient={member.color}
               delay={index * 0.1}
               testId={`team-member-${index}`}
+              imageUrl={member.imageUrl}
             />
           ))}
         </div>
@@ -72,7 +83,7 @@ export function TeamSection() {
             </div>
             <div>
               <img
-                src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600"
+                src="/assets/mission.webp"
                 alt="Young team working on healthcare technology"
                 className="rounded-2xl shadow-lg w-full h-auto"
                 data-testid="img-team-working"

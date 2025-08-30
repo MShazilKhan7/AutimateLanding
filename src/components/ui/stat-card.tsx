@@ -7,7 +7,7 @@ interface StatCardProps {
 
 export function StatCard({ value, label, color, testId }: StatCardProps) {
   return (
-    <div className="text-center">
+    <div className="text-center bg-white p-4 rounded-xl">
       <div className={`text-2xl font-bold ${color}`} data-testid={testId}>
         {value}
       </div>
