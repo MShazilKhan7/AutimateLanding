@@ -66,46 +66,6 @@ export function FeaturesSection() {
             />
           ))}
         </div>
-
-        <AnimatedSection
-          delay={0.6}
-          className="bg-gradient-to-r from-gray-50 to-blue-50 rounded-3xl p-8 lg:p-12"
-        >
-          <div className="grid lg:grid-cols-2 gap-8 items-center">
-            <div className="space-y-6">
-              <h3 className="text-3xl font-bold text-soft-charcoal">Designed for Success</h3>
-              <p className="text-lg text-gray-600">
-                Every feature is carefully crafted based on research and feedback from autism specialists, ensuring
-                maximum effectiveness and engagement.
-              </p>
-              <div className="flex flex-wrap gap-4">
-                <Badge variant="secondary" className="bg-white text-soft-charcoal shadow-sm">
-                  Evidence-Based
-                </Badge>
-                <Badge variant="secondary" className="bg-white text-soft-charcoal shadow-sm">
-                  Child-Friendly
-                </Badge>
-                <Badge variant="secondary" className="bg-white text-soft-charcoal shadow-sm">
-                  Parent-Approved
-                </Badge>
-              </div>
-            </div>
-            <div className="grid grid-cols-2 gap-4">
-              <img
-                src="https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=300"
-                alt="Family supporting child with autism"
-                className="rounded-xl shadow-lg w-full h-32 object-cover"
-                data-testid="img-family-support"
-              />
-              <img
-                src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=300"
-                alt="Children with autism in learning session"
-                className="rounded-xl shadow-lg w-full h-32 object-cover"
-                data-testid="img-children-learning"
-              />
-            </div>
-          </div>
-        </AnimatedSection>
       </div>
     </section>
   );

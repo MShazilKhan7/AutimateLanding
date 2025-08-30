@@ -12,19 +12,11 @@ export function SolutionSection() {
           description="AutiMate bridges the care gap with accessible, personalized speech therapy powered by artificial intelligence."
         />
 
-        <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
+        <div className="flex justify-center mb-16">
           <AnimatedSection
-            direction="left"
-            className="space-y-8"
+            direction="up"
+            className="w-full max-w-3xl space-y-8"
           >
-            <div className="space-y-6">
-              <h3 className="text-3xl font-bold text-soft-charcoal">Transforming Autism Care</h3>
-              <p className="text-lg text-gray-600 leading-relaxed">
-                Our platform uses advanced AI to provide personalized speech therapy sessions that adapt to each
-                child's unique needs, learning pace, and progress.
-              </p>
-            </div>
-
             <div className="grid sm:grid-cols-2 gap-6">
               <FeatureCard
                 icon={Bot}
@@ -58,29 +50,6 @@ export function SolutionSection() {
                 delay={0.4}
               />
             </div>
-          </AnimatedSection>
-
-          <AnimatedSection
-            direction="right"
-            delay={0.2}
-            className="relative"
-          >
-            <img
-              src="https://pixabay.com/get/g4c5186e678db84a876ed9ae5d66e260369aab4664c5c9c1f95ed26d6f3a8623ed9955bc4436d6b3ecf8ba4ed7c599a3851bf5fce5753a8d8311801f698eee63e_1280.jpg"
-              alt="Healthcare technology interface"
-              className="rounded-3xl shadow-2xl w-full h-auto"
-              data-testid="img-healthcare-tech"
-            />
-
-            <AnimatedSection
-              delay={0.4}
-              className="absolute -top-6 -right-6 bg-white p-4 rounded-xl shadow-xl"
-            >
-              <div className="text-center">
-                <div className="text-2xl font-bold text-sage-green" data-testid="stat-success-rate">92%</div>
-                <div className="text-xs text-gray-600">Success Rate</div>
-              </div>
-            </AnimatedSection>
           </AnimatedSection>
         </div>
       </div>

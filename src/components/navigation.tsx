@@ -1,8 +1,14 @@
 import { useState } from "react";
-import { MessageCircle, Menu, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { GradientButton } from "@/components/ui/gradient-button";
-import { IconBadge } from "@/components/ui/icon-badge";
+
+const NAV_LINKS = [
+  { id: "about", label: "About" },
+  { id: "solution", label: "Solution" },
+  { id: "features", label: "Features" },
+  { id: "contact", label: "Contact" },
+];
 
 export function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -16,66 +22,46 @@ export function Navigation() {
   };
 
   return (
-    <nav className="bg-white/90 backdrop-blur-sm fixed w-full z-50 shadow-sm border-b border-gray-100">
+    <nav className="bg-white w-full z-50 border-b shadow-sm border-primary/10 sticky top-0">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
+          {/* Logo */}
           <div className="flex items-center space-x-2">
-            <IconBadge 
-              icon={MessageCircle} 
-              gradient="from-soft-teal to-gentle-blue" 
-              size="md"
-            />
-            <span className="text-2xl font-bold bg-gradient-to-r from-soft-teal to-gentle-blue bg-clip-text text-transparent">
+            <span className="text-2xl font-bold text-primary select-none">
               AutiMate
             </span>
           </div>
 
-          <div className="hidden md:flex items-center space-x-8">
-            <button
-              onClick={() => scrollToSection("about")}
-              className="text-soft-charcoal hover:text-gentle-blue transition-colors duration-200"
-              data-testid="nav-about"
-            >
-              About
-            </button>
-            <button
-              onClick={() => scrollToSection("solution")}
-              className="text-soft-charcoal hover:text-gentle-blue transition-colors duration-200"
-              data-testid="nav-solution"
-            >
-              Solution
-            </button>
-            <button
-              onClick={() => scrollToSection("features")}
-              className="text-soft-charcoal hover:text-gentle-blue transition-colors duration-200"
-              data-testid="nav-features"
-            >
-              Features
-            </button>
-            <button
-              onClick={() => scrollToSection("contact")}
-              className="text-soft-charcoal hover:text-gentle-blue transition-colors duration-200"
-              data-testid="nav-contact"
-            >
-              Contact
-            </button>
+          {/* Desktop Navigation */}
+          <div className="hidden md:flex items-center space-x-2">
+            {NAV_LINKS.map((link) => (
+              <button
+                key={link.id}
+                onClick={() => scrollToSection(link.id)}
+                className="px-4 py-2 rounded-md text-black/60 font-medium hover:bg-primary hover:text-white transition-colors duration-200"
+                data-testid={`nav-${link.id}`}
+              >
+                {link.label}
+              </button>
+            ))}
             <GradientButton
               onClick={() => scrollToSection("contact")}
               variant="primary"
               size="md"
               testId="button-get-started"
-              className="rounded-full px-6 py-2"
+              className="rounded-full px-6 py-2 ml-2"
             >
               Get Started
             </GradientButton>
           </div>
 
+          {/* Mobile Menu Button */}
           <div className="md:hidden">
             <Button
               variant="ghost"
               size="icon"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="text-soft-charcoal hover:text-gentle-blue"
+              className="text-primary hover:bg-primary/10"
               data-testid="button-mobile-menu"
             >
               {isMenuOpen ? <X className="text-xl" /> : <Menu className="text-xl" />}
@@ -85,42 +71,24 @@ export function Navigation() {
 
         {/* Mobile Menu */}
         {isMenuOpen && (
-          <div className="md:hidden bg-white border-t border-gray-100 py-4">
-            <div className="flex flex-col space-y-4">
-              <button
-                onClick={() => scrollToSection("about")}
-                className="text-soft-charcoal hover:text-gentle-blue transition-colors duration-200 text-left"
-                data-testid="mobile-nav-about"
-              >
-                About
-              </button>
-              <button
-                onClick={() => scrollToSection("solution")}
-                className="text-soft-charcoal hover:text-gentle-blue transition-colors duration-200 text-left"
-                data-testid="mobile-nav-solution"
-              >
-                Solution
-              </button>
-              <button
-                onClick={() => scrollToSection("features")}
-                className="text-soft-charcoal hover:text-gentle-blue transition-colors duration-200 text-left"
-                data-testid="mobile-nav-features"
-              >
-                Features
-              </button>
-              <button
-                onClick={() => scrollToSection("contact")}
-                className="text-soft-charcoal hover:text-gentle-blue transition-colors duration-200 text-left"
-                data-testid="mobile-nav-contact"
-              >
-                Contact
-              </button>
+          <div className="md:hidden bg-white border-t border-primary/10 py-4 shadow">
+            <div className="flex flex-col space-y-2">
+              {NAV_LINKS.map((link) => (
+                <button
+                  key={link.id}
+                  onClick={() => scrollToSection(link.id)}
+                  className="w-full px-4 py-3 rounded-md text-primary font-medium text-left hover:bg-primary hover:text-white transition-colors duration-200"
+                  data-testid={`mobile-nav-${link.id}`}
+                >
+                  {link.label}
+                </button>
+              ))}
               <GradientButton
                 onClick={() => scrollToSection("contact")}
                 variant="primary"
                 size="md"
                 testId="mobile-button-get-started"
-                className="w-full"
+                className="w-full mt-2"
               >
                 Get Started
               </GradientButton>
