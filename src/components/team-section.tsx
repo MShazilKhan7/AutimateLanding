@@ -7,25 +7,27 @@ export function TeamSection() {
   const teamMembers = [
     {
       name: "M.Shazil Khan",
-      role: "Co-Founder",
+      role: "Co-founder",
       color: "from-gentle-blue to-purple-500",
       imageUrl: "/assets/shazil.jpg",
     },
     {
       name: "M.Hamza Bham",
-      role: "CTO",
+      role: "Co-founder",
       description: "Specializing in machine learning and speech recognition technologies.",
       color: "from-sage-green to-teal-500",
       imageUrl: "/assets/hamza.jpg",
     },
     {
-      role: "Faiq Hussain",
+      name: "Faiq Hussain",
+      role: "Co-founder",
       description: "Focused on user experience and accessibility in healthcare applications.",
       color: "from-warm-orange to-red-500",
       imageUrl: "/assets/faiq.jpg",
     },
     {
-      role: "Umair Lafir",
+      name: "Umair Lafir",
+      role: "Co-founder",
       description: "Dedicated to creating intuitive and inclusive interfaces for children and families.",
       color: "from-soft-pink to-yellow-400",
       imageUrl: "/assets/umair.jpg",
