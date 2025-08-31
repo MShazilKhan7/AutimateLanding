@@ -6,7 +6,7 @@ import { FeaturesSection } from "@/components/features-section";
 import { TeamSection } from "@/components/team-section";
 import { ContactSection } from "@/components/contact-section";
 import { Footer } from "@/components/footer";
-import { About } from "@/components/About";
+import { About } from "@/components/about";
 
 export default function Home() {
   return (
